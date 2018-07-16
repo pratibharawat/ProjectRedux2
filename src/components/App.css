@@ -1,0 +1,121 @@
+.nav-link.active, button:not(.disabled) {
+    background: #007bff !important;
+    color: #ffffff !important;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+.navbar .nav-link.active {
+    border-radius: 5px;
+}
+.form {
+    max-width: 1500px;
+    max-height: 6500px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.header {
+    padding: 15px;
+    background-color: #4CAF50;
+    color: black;
+}
+
+.login {
+    padding: 15px;
+    color: black;
+    font-size: x-large;
+}
+.form .header,
+.form .checkbox {
+    margin-bottom: 10px;
+}
+
+.form .checkbox {
+    font-weight: normal;
+}
+
+.form input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.leaderboard-entry {
+    margin: 10px;
+}
+
+.circular-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    display: block;
+    margin: 5px;
+}
+
+.selected-option {
+    background: #007bff;
+}
+
+.button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin .form-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+    font-weight: normal;
+}
+
+.form-signin .drop-down {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .drop-down:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.label {
+    text-align: center;
+    line-height: 150%;
+    font-size: 16px;
+}
