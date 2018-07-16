@@ -37,7 +37,7 @@ class NewQuestion extends Component {
         }
         return (
             <div class="container">
-                <h1>Would You Rather?</h1>
+                <h1>Would You Rather...?</h1>
                 <Form onSubmit={this.handleSubmit}>
                     <FormGroup>
                         <Input

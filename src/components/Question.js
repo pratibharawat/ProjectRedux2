@@ -1,6 +1,5 @@
 import React, {Component, Fragment} from 'react'
 import {connect} from 'react-redux'
-import {Row} from 'reactstrap'
 import {handleAnswerQuestion} from '../actions/questions'
 import Option from "./Option"
 import LeaderBoardUI from './LeaderBoardUI'
@@ -23,13 +22,9 @@ class Question extends Component {
                     ?
                     (<div>
                         <h1>Would you rather?</h1>
-                        <Row>
                             <LeaderBoardUI id={question.author}/>
-                        </Row>
-                        <Row>
                             <Option questionId={question.id} optionName="optionOne" onClick={this.handleVote}/>
                             <Option questionId={question.id} optionName="optionTwo" onClick={this.handleVote}/>
-                        </Row>
                     </div>)
                     : <MissingQuestion/>}
             </Fragment>

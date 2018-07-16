@@ -7,8 +7,20 @@
     max-width: 1000px;
     margin: 0 auto;
     padding: 10px;
+    text-align: center;
   }
 
+  .image {
+    max-width: 400px;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  .card {
+    max-width: 400px;
+    padding: 10px;
+    text-align: inherit;
+  }
 .navbar .nav-link.active {
     border-radius: 5px;
 }

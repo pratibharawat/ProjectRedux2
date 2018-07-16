@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 import './App.css'
 import {Button, Form, FormGroup, Label} from 'reactstrap'
-import {authenticateUser} from "../actions/authedUser"
+import {setAuthedUser} from "../actions/authedUser"
 import {Redirect} from 'react-router-dom'
 
 class Login extends Component {
@@ -13,7 +13,7 @@ class Login extends Component {
     handleSubmit = (event) => {
         event.preventDefault()
         if (this.state.user !== "") {
-            this.props.dispatch(authenticateUser(this.state.user))
+            this.props.dispatch(setAuthedUser(this.state.user));
             this.setState({isLoggedIn: true});
         }
     }
@@ -24,14 +24,15 @@ class Login extends Component {
 
     render() {
         if (this.state.isLoggedIn) {
-            return <Redirect to='/'/>
+            return <Redirect to='/'/>;
         }
 
         return (
+            <div className="container">
             <Form onSubmit={this.handleSubmit} className="form">
                 <h2 className="header">Would You Rather?</h2>
                 <FormGroup>
-                    <Label htmlFor="username" className="login">Login:</Label>
+                    <Label htmlFor="username" className="login">Please sign in:</Label>
                     <select id="username" className="form-control"
                             value={this.state.user}
                             onChange={this.handleChange}>
@@ -45,7 +46,8 @@ class Login extends Component {
                 <Button type="submit" id="_submit" name="_submit"
                         className="button">Login</Button>
             </Form>
-        )
+            </div>
+        );
     }
 }
 

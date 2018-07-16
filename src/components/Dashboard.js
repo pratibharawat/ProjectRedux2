@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
-import {Nav, NavItem, NavLink, TabContent, TabPane, ListGroup, ListGroupItem} from 'reactstrap'
-import {connect} from 'react-redux'
-import Poll from './PollSummary'
+import React, {Component} from 'react';
+import {Nav, NavItem, NavLink, TabContent, TabPane, ListGroup, ListGroupItem} from 'reactstrap';
+import {connect} from 'react-redux';
+import Poll from './Poll';
 import classnames from 'classnames';
 
 class Dashboard extends Component {

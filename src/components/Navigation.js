@@ -1,28 +1,26 @@
-import React, {Component, Fragment} from 'react'
-import LoadingBar from 'react-redux-loading'
-import {NavLink, Redirect} from 'react-router-dom'
-import {connect} from 'react-redux'
-import {Nav, Navbar, NavItem, NavbarBrand, NavLink as UINavLink} from 'reactstrap'
-import {signOut} from "../actions/authedUser"
+import React, {Component, Fragment} from 'react';
+import LoadingBar from 'react-redux-loading';
+import {logoutUser} from "../actions/authedUser";
+import {NavLink, Redirect} from 'react-router-dom';
+import {connect} from 'react-redux';
+import {Nav, Navbar, NavItem, NavbarBrand, NavLink as UINavLink} from 'reactstrap';
 
 class Navigation extends Component {
     state = {
-        redirectLogin: false
+        loginDirect: false
     }
 
-    handleSignout = (e) => {
-        e.preventDefault()
-        this.props.dispatch(signOut())
+    handleOnSignout = (e) => {
+        e.preventDefault();
+        this.props.dispatch(logoutUser());
         this.setState(() => ({
-            redirectLogin: true
-        }))
+            loginDirect: true
+        }));
     }
 
     render() {
-        const {redirectLogin} = this.state
-
-        if (redirectLogin === true) {
-            return (<Redirect to="/login"/>)
+        if (this.state.loginDirect === true) {
+            return (<Redirect to="/login"/>);
         }
 
         return (
@@ -35,16 +33,13 @@ class Navigation extends Component {
                             <UINavLink tag={NavLink} exact to="/">Dashboard</UINavLink>
                         </NavItem>
                         <NavItem>
-                            <UINavLink tag={NavLink}
-                                              to="/leaderboard">Leaderboard</UINavLink>
+                            <UINavLink tag={NavLink} to="/leaderboard">Leaderboard</UINavLink>
                         </NavItem>
                         <NavItem>
-                            <UINavLink tag={NavLink} to="/add">Add
-                                Question</UINavLink>
+                            <UINavLink tag={NavLink} to="/add">Add Question</UINavLink>
                         </NavItem>
                         <NavItem>
-                            <UINavLink tag={NavLink} to="#"
-                                              onClick={this.handleSignout}>Signout</UINavLink>
+                            <UINavLink tag={NavLink} to="#" onClick={this.handleOnSignout}>Signout</UINavLink>
                         </NavItem>
                     </Nav>
                 </Navbar>
@@ -58,7 +53,7 @@ class Navigation extends Component {
 function mapStateToProps({authedUser, users}) {
     return {
         user: users[authedUser]
-    }
+    };
 }
 
-export default connect(mapStateToProps)(Navigation)
+export default connect(mapStateToProps)(Navigation);

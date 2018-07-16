@@ -2,9 +2,8 @@ import React, {Fragment} from 'react'
 import {Redirect, Route} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {Container, Row} from 'reactstrap'
-import {isEmpty} from "./App";
 import Navigation from './Navigation'
-
+import {isEmpty} from "./App";
 
 const PrivateRoute = ({component: Component, isAuthenticated, ...rest}) => (
     <Route {...rest} render={(props) => {
@@ -23,7 +22,7 @@ const PrivateRoute = ({component: Component, isAuthenticated, ...rest}) => (
                     pathname: '/login',
                     state: {from: props.location}
                 }}/>
-        )
+        );
     }}/>
 )
 

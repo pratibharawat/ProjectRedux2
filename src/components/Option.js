@@ -4,12 +4,10 @@ import {Link} from 'react-router-dom'
 import {Card, CardBody, CardSubtitle, CardTitle} from 'reactstrap'
 import './App.css'
 
-
 class Option extends Component {
     handleClick = (e) => {
         e.preventDefault()
-        const {onClick, optionName} = this.props
-        onClick(optionName)
+        this.props.onClick(this.props.optionName)
     }
 
     render() {
@@ -24,7 +22,7 @@ class Option extends Component {
                         <CardBody>
                             <CardTitle>{text}</CardTitle>
                             {showResults === true &&
-                            (<CardSubtitle>Number Of Votes: {votes.length} ({percentage}%)</CardSubtitle>)
+                            (<CardSubtitle>Votes: {votes.length} ({percentage}%)</CardSubtitle>)
                             }
                         </CardBody>
                     </Card>
@@ -36,7 +34,7 @@ class Option extends Component {
                         <CardBody>
                             <CardTitle>{text}</CardTitle>
                             {showResults === true &&
-                            (<CardSubtitle>Number Of Votes: {votes.length} ({percentage}%)</CardSubtitle>)
+                            (<CardSubtitle>Votes: {votes.length} ({percentage}%)</CardSubtitle>)
                             }
                         </CardBody>
                     </Card>

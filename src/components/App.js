@@ -1,20 +1,20 @@
 import React, {Component, Fragment} from 'react';
 import LoadingBar from 'react-redux-loading'
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import Dashboard from "./Dashboard";
-import Login from './Login'
-import PrivateRoute from './PrivateRoute'
-import AddQuestion from './AddQuestion'
-import {connect} from 'react-redux'
-import {handleInitialData} from "../actions/shared"
-import Leaderboard from "./Leaderboard"
-import Question from './Question'
+import Login from './Login';
+import PrivateRoute from './PrivateRoute';
+import AddQuestion from './AddQuestion';
+import {connect} from 'react-redux';
+import {handleInitialData} from "../actions/shared";
+import Leaderboard from "./Leaderboard";
+import Question from './Question';
 
 class App extends Component {
     componentDidMount() {
-        this.props.dispatch(handleInitialData())
+        this.props.dispatch(handleInitialData());
     }
 
     render() {
@@ -48,9 +48,7 @@ export function isEmpty(obj) {
 function mapStateToProps({questions, users}) {
     return {
         loading: isEmpty(questions) || isEmpty(users)
-    }
+    };
 }
 
 export default connect(mapStateToProps)(App);
-//TODO: optimistic behavior
-//TODO: Show friendly message when page does not exist
